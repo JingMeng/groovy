@@ -17,6 +17,7 @@
  *  under the License.
  */
 dependencies {
-    compile project(':groovy-json')
-    testCompile project(':groovy-test')
+    implementation project(':groovy-json')
+    testImplementation project(':groovy-test')
 }
+

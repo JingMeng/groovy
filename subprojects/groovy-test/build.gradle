@@ -17,8 +17,8 @@
  *  under the License.
  */
 dependencies {
-    compile rootProject
-    compile 'junit:junit:4.12'
+    implementation rootProject
+    implementation 'junit:junit:4.12'
     testRuntime project(':groovy-ant')
 }
 

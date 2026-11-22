@@ -17,9 +17,9 @@
  *  under the License.
  */
 dependencies {
-    compile rootProject
-    testCompile project(':groovy-test')
-    testCompile ("org.spockframework:spock-core:$spockVersion") {
+    implementation rootProject
+    testImplementation project(':groovy-test')
+    testImplementation ("org.spockframework:spock-core:$spockVersion") {
         exclude module: 'groovy-all'
     }
 }
@@ -37,4 +37,5 @@ tasks.withType(JavaCompile) {
 tasks.withType(Javadoc) {
         options.source = "1.7"
 }
+
 

@@ -20,7 +20,7 @@ import org.codehaus.groovy.gradle.ReleaseInfoGenerator
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         maven {
             name 'Bintray Asciidoctor repo'
             url 'http://dl.bintray.com/content/aalmiray/asciidoctor'
@@ -94,7 +94,7 @@ allprojects {
             // Try to use Aliyun maven repository when building in China
             maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         }
-        jcenter()
+        mavenCentral()
         maven { url 'http://dl.bintray.com/melix/thirdparty-apache' } // openbeans
     }
 
@@ -506,3 +506,8 @@ licenseReport {
 //licenseFormat.dependsOn licenseFormatCustom
 //licenseFormat.dependsOn licenseFormatGradle
 //
+
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}

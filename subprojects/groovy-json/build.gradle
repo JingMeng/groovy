@@ -17,8 +17,9 @@
  *  under the License.
  */
 dependencies {
-    compile rootProject
-    testCompile project(':groovy-test')
+    implementation rootProject
+    testImplementation project(':groovy-test')
     testRuntime project(':groovy-ant')
-    testCompile project(':groovy-dateutil')
+    testImplementation project(':groovy-dateutil')
 }
+

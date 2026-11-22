@@ -17,9 +17,9 @@
  *  under the License.
  */
 dependencies {
-    compile rootProject
-    testCompile project(':groovy-test')
-    testCompile project(':groovy-dateutil')
+    implementation rootProject
+    testImplementation project(':groovy-test')
+    testImplementation project(':groovy-dateutil')
 }
 
 task moduleDescriptor(type: org.codehaus.groovy.gradle.WriteExtensionDescriptorTask) {
@@ -27,3 +27,4 @@ task moduleDescriptor(type: org.codehaus.groovy.gradle.WriteExtensionDescriptorT
     staticExtensionClasses = 'org.apache.groovy.datetime.extensions.DateTimeStaticExtensions'
 }
 compileJava.dependsOn moduleDescriptor
+

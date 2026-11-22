@@ -30,7 +30,7 @@ configurations {
 
 dependencies {
     jmh rootProject
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
+    testImplementation 'org.codehaus.groovy:groovy-all:2.4.12'
     stats 'org.apache.commons:commons-math3:3.6'
 }
 
@@ -63,7 +63,7 @@ task performanceTests {
         versions = versions.sort { it[1] }
         def fastest = versions[0][1]
         versions.each { version, mean, stdDev ->
-            print "Groovy $version Average ${mean}ms ± ${new DecimalFormat("#.##").format(stdDev)}ms "
+            print "Groovy $version Average ${mean}ms ? ${new DecimalFormat("#.##").format(stdDev)}ms "
             if (mean > fastest) {
                 def diff = 100 * (mean - fastest) / fastest
                 print "(${new DecimalFormat("#.##").format(diff)}% slower)"
@@ -124,3 +124,4 @@ task performanceTests {
     }
     performanceTests.dependsOn(t)
 }
+
